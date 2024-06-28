@@ -72,7 +72,7 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="flex flex-col grid text-start bg-gray-200 w-10/12 text-black">
+      <div className="flex flex-col text-start bg-gray-200 w-10/12 text-black">
         <div className="font-bold mx-4 mt-4">
           {Label.COMPLETE_FORM_LABEL.toUpperCase()}
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
                 {...register("address", {
                   required: true,
                   maxLength: 40,
-                  minLength: 6,
+                  minLength: 2,
                 })}
               />
               {errors.address && (
