@@ -1,35 +1,65 @@
 import Image from "next/image";
 
+import { Label } from "./constants/label";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+    <main className="flex min-h-screen flex-col place-items-center justify-between pt-10">
+      <div className="flex flex-col place-item-center">
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
-          src="/logotipo.jpg"
+          src="/logotipo.png"
           alt="Logo Aldo"
           width={840}
-          height={680}
+          height={480}
           priority
         />
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="flex flex-col place-items-center">
+        <Image
+          className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
+          src="/mercadopago.png"
+          alt="Logo Aldo"
+          width={840}
+          height={150}
+          priority
+        />
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="grid place-items-center w-10/12 bg-gray-400 p-2">
+        {Label.WORK_ZONE_TITLE.toUpperCase()}
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="grid place-items-center w-10/12 bg-white text-black p-4">
+        <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
+        <div>{Label.WORK_TIME}</div>
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="flex flex-col place-items-center w-10/12 bg-gray-300 text-black p-4">
+        <div className="font-bold">{Label.SHOP_NAME}</div>
+        <div>{Label.DIGITAL_MENU_LABEL}</div>
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="flex flex-col text-center">
+        <Image
+          className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
+          src="/iceCream.jpg"
+          alt="Logo Aldo"
+          width={840}
+          height={180}
+          priority
+        />
       </div>
-      <div className="grid text-center lg:mb-0 lg:w-full lg:max-w-5xl">
-        Diseñado por GDV 2024
+      <div className="grid text-center bg-slate-300 w-10/12 p-4">
+        {Label.REGARDS_LABEL}
+      </div>
+      <div className="grid text-center bg-white w-10/12 p-6 text-black">
+        {Label.PAYMENT_METHODS_LABEL}
+      </div>
+      <div className="grid text-center bg-green-800 m-2 p-2 w-10/12 rounded-md text-white">
+        {Label.DELIVEY_lABEL}
+      </div>
+      <div className="grid text-center  bg-green-800 m-2 p-2 w-10/12 rounded-md text-white">
+        {Label.TAKEIT_lABEL}
+      </div>
+      <div className="grid text-center  bg-white p-4 w-10/12 text-black font-extrabold">
+        {Label.AUTHOR}
       </div>
     </main>
   );
