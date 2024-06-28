@@ -17,7 +17,9 @@ export default function Home() {
   } = useForm();
 
   const onSubmit = (data: any) => {
-    openInNewTab(Label.MESSAGE_DELIVERY + Object.values(data));
+    openInNewTab(
+      `${Label.MESSAGE_DELIVERY} Pedido a nombre de:${data.firstName} Direccion: ${data.address} Cantidad de pizzas: ${data.quantity} `
+    );
   };
 
   return (
@@ -101,7 +103,7 @@ export default function Home() {
                 type="text"
                 {...register("address", {
                   required: true,
-                  maxLength: 40,
+                  maxLength: 80,
                   minLength: 2,
                 })}
               />

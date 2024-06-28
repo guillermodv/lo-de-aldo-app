@@ -9,5 +9,5 @@ export enum Label {
   DELIVERY_lABEL = "Enviar pedido por Whatsapp",
   TAKEIT_lABEL = "Chat whatsapp lo retiro",
   AUTHOR = "Aldo 2024",
-  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=20Pedido%20pizza%20delivery:",
+  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20pizza%20delivery:%20",
 }
