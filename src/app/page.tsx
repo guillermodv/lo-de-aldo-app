@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
 
-import { Label } from "./constants/label";
+import WhatsappLogo from "../components/whatsappLogo";
+import { Label } from "../constants/label";
+
+const openInNewTab = (url: string): void => {
+  window.open(url, "_blank", "noreferrer");
+};
 
 export default function Home() {
   return (
@@ -25,17 +31,26 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="grid place-items-center w-10/12 bg-gray-400 p-2">
+      <div className="flex flex-col place-items-center w-10/12 bg-gray-300 p-2 font-extrabold">
         {Label.WORK_ZONE_TITLE.toUpperCase()}
+        <div className="p-2">
+          <iframe
+            width="400"
+            height="300"
+            src="https://maps.google.com/maps?q=wilde&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            title="Aldo"
+          ></iframe>
+        </div>
       </div>
       <div className="grid place-items-center w-10/12 bg-white text-black p-4">
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
         <div>{Label.WORK_TIME}</div>
       </div>
-      <div className="flex flex-col place-items-center w-10/12 bg-gray-300 text-black p-4">
+      <div className="flex flex-col place-items-center w-10/12 bg-gray-200 text-black p-4">
         <div className="font-bold">{Label.SHOP_NAME}</div>
         <div>{Label.DIGITAL_MENU_LABEL}</div>
       </div>
+
       <div className="flex flex-col text-center">
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
@@ -46,17 +61,31 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="grid text-center bg-slate-300 w-10/12 p-4">
+      <div className="grid text-center bg-slate-200 w-10/12 p-4">
         {Label.REGARDS_LABEL}
       </div>
       <div className="grid text-center bg-white w-10/12 p-6 text-black">
         {Label.PAYMENT_METHODS_LABEL}
       </div>
-      <div className="grid text-center bg-green-800 m-2 p-2 w-10/12 rounded-md text-white">
-        {Label.DELIVEY_lABEL}
+      <div className="grid text-center m-2 p-2 w-10/12 rounded-md text-white">
+        <button
+          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+          type="button"
+          onClick={() => openInNewTab(Label.MESSAGE_DELIVERY)}
+        >
+          <WhatsappLogo />
+          {Label.DELIVERY_lABEL}
+        </button>
       </div>
-      <div className="grid text-center  bg-green-800 m-2 p-2 w-10/12 rounded-md text-white">
-        {Label.TAKEIT_lABEL}
+      <div className="grid text-center m-2 p-2 w-10/12 rounded-md text-white">
+        <button
+          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+          type="button"
+          onClick={() => openInNewTab(Label.MESSAGE_TAKEIT)}
+        >
+          <WhatsappLogo />
+          {Label.TAKEIT_lABEL}
+        </button>
       </div>
       <div className="grid text-center  bg-white p-4 w-10/12 text-black font-extrabold">
         {Label.AUTHOR}
