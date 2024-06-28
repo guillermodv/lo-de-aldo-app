@@ -5,10 +5,9 @@ export enum Label {
   WORK_TIME = "Martes a Domingos de 19:00 a 23:00hs",
   DIGITAL_MENU_LABEL = "📱 Codigo QR para carta digital! ",
   REGARDS_LABEL = "😊 ¡Gracias por elegirnos!",
-  PAYMENT_METHODS_LABEL = "Seleccioná las opciones de pago:",
-  DELIVERY_lABEL = "Chat whatsapp delivery",
+  COMPLETE_FORM_LABEL = "Complete el pedido:",
+  DELIVERY_lABEL = "Enviar pedido por Whatsapp",
   TAKEIT_lABEL = "Chat whatsapp lo retiro",
   AUTHOR = "Aldo 2024",
-  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=%27%20quiero%20pizza%20delivery%27",
-  MESSAGE_TAKEIT = "https://api.whatsapp.com/send?phone=5491165550438&text=%27%20quiero%20pizza%20llevo%27",
+  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=20Pedido%20pizza%20delivery:",
 }

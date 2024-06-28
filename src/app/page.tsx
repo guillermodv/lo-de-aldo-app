@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 
+import { useForm } from "react-hook-form";
 import WhatsappLogo from "../components/whatsappLogo";
 import { Label } from "../constants/label";
 
@@ -9,6 +10,16 @@ const openInNewTab = (url: string): void => {
 };
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    openInNewTab(Label.MESSAGE_DELIVERY + Object.values(data));
+  };
+
   return (
     <main className="flex min-h-screen flex-col place-items-center justify-between pt-10">
       <div className="flex flex-col place-item-center">
@@ -61,31 +72,72 @@ export default function Home() {
           priority
         />
       </div>
+      <div className="flex flex-col grid text-start bg-gray-200 w-10/12 text-black">
+        <div className="font-bold mx-4 mt-4">
+          {Label.COMPLETE_FORM_LABEL.toUpperCase()}
+        </div>
+        <div className="mx-4">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="py-1">
+              <label htmlFor="firstName">Nombre: </label>
+              <input
+                id="firstName"
+                type="text"
+                {...register("firstName", {
+                  required: true,
+                  maxLength: 40,
+                  minLength: 2,
+                })}
+              />
+              {errors.firstName && (
+                <span className="text-red-500"> Ingrese Nombre</span>
+              )}
+            </div>
+
+            <div className="py-1">
+              <label htmlFor="address">Direccion: </label>
+              <input
+                id="address"
+                type="text"
+                {...register("address", {
+                  required: true,
+                  maxLength: 40,
+                  minLength: 6,
+                })}
+              />
+              {errors.address && (
+                <span className="text-red-500"> Ingrese Dirección</span>
+              )}
+            </div>
+
+            <div className="py-1">
+              <label htmlFor="quantity">Cantidad de pizzas: </label>
+              <input
+                id="quantity"
+                type="text"
+                {...register("quantity", {
+                  required: true,
+                  maxLength: 2,
+                })}
+              />
+              {errors.quantity && (
+                <span className="text-red-500"> Ingrese Cantidad</span>
+              )}
+            </div>
+            <div className="grid text-center p-2 w-10/12 rounded-md text-white">
+              <button
+                className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+                type="submit"
+              >
+                <WhatsappLogo />
+                {Label.DELIVERY_lABEL}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <div className="grid text-center bg-slate-200 w-10/12 p-4">
         {Label.REGARDS_LABEL}
-      </div>
-      <div className="grid text-center bg-white w-10/12 p-6 text-black">
-        {Label.PAYMENT_METHODS_LABEL}
-      </div>
-      <div className="grid text-center m-2 p-2 w-10/12 rounded-md text-white">
-        <button
-          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
-          type="button"
-          onClick={() => openInNewTab(Label.MESSAGE_DELIVERY)}
-        >
-          <WhatsappLogo />
-          {Label.DELIVERY_lABEL}
-        </button>
-      </div>
-      <div className="grid text-center m-2 p-2 w-10/12 rounded-md text-white">
-        <button
-          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
-          type="button"
-          onClick={() => openInNewTab(Label.MESSAGE_TAKEIT)}
-        >
-          <WhatsappLogo />
-          {Label.TAKEIT_lABEL}
-        </button>
       </div>
       <div className="grid text-center  bg-white p-4 w-10/12 text-black font-extrabold">
         {Label.AUTHOR}
