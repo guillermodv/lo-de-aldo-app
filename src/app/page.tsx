@@ -44,7 +44,7 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="flex flex-col place-items-center w-10/12 bg-gray-300 p-2 font-extrabold">
+      <div className="flex flex-col place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-gray-300 p-2 font-extrabold">
         {Label.WORK_ZONE_TITLE.toUpperCase()}
         <div className="p-2">
           <iframe
@@ -55,11 +55,11 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-      <div className="grid place-items-center w-10/12 bg-white text-black p-4">
+      <div className="grid place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-white text-black p-4">
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
         <div>{Label.WORK_TIME}</div>
       </div>
-      <div className="flex flex-col place-items-center w-10/12 bg-gray-200 text-black p-4">
+      <div className="flex flex-col place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-gray-200 text-black p-4">
         <div className="font-bold">{Label.SHOP_NAME}</div>
         <div>{Label.DIGITAL_MENU_LABEL}</div>
       </div>
@@ -113,22 +113,22 @@ export default function Home() {
             </div>
 
             <div className="py-1">
-              <label htmlFor="quantity">Cantidad de pizzas: </label>
+              <label htmlFor="notes">Notas: </label>
               <input
-                id="quantity"
+                id="notes"
                 type="text"
-                {...register("quantity", {
+                {...register("notes", {
                   required: true,
                   maxLength: 2,
                 })}
               />
-              {errors.quantity && (
-                <span className="text-red-500"> Ingrese Cantidad</span>
+              {errors.notes && (
+                <span className="text-red-500"> Ingrese Notas</span>
               )}
             </div>
-            <div className="grid text-center p-2 w-10/12 rounded-md text-white">
+            <div className="grid p-2 lg:w-10/12 w-12/12 md:w-10/12 rounded-md text-white">
               <button
-                className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
+                className="align-middle select-none font-sans font-bold uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
                 type="submit"
               >
                 <WhatsappLogo />
@@ -138,10 +138,10 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="grid text-center bg-slate-200 w-10/12 p-4">
+      <div className="grid text-center bg-slate-200 lg:w-10/12 w-12/12 md:w-10/12 p-4">
         {Label.REGARDS_LABEL}
       </div>
-      <div className="grid text-center  bg-white p-4 w-10/12 text-black font-extrabold">
+      <div className="grid text-center  bg-white p-4 lg:w-10/12 w-12/12 md:w-10/12 text-black font-extrabold">
         {Label.AUTHOR}
       </div>
     </main>
