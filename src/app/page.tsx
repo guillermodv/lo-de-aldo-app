@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="mx-4">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="py-1 font-mono">
+            <div className="py-1">
               <label htmlFor="firstName">Nombre: </label>
               <input
                 id="firstName"
@@ -100,7 +100,7 @@ export default function Home() {
               )}
             </div>
 
-            <div className="py-1 font-mono">
+            <div className="py-1">
               <label htmlFor="address">Direccion: </label>
               <input
                 id="address"
@@ -116,7 +116,7 @@ export default function Home() {
               )}
             </div>
 
-            <div className="py-1 font-mono">
+            <div className="py-1">
               <label htmlFor="details">Detalle: </label>
               <input
                 id="details"
