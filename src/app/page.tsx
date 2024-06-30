@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col place-items-center justify-between pt-10">
+    <main className="flex flex-col items-center justify-between pt-4 w:12/12">
       <div className="flex flex-col place-item-center">
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
@@ -34,6 +34,7 @@ export default function Home() {
           priority
         />
       </div>
+
       <div className="flex flex-col place-items-center">
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
@@ -44,6 +45,7 @@ export default function Home() {
           priority
         />
       </div>
+
       <div className="flex flex-col place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-gray-300 p-2 font-extrabold">
         {Label.WORK_ZONE_TITLE.toUpperCase()}
         <div className="p-2">
@@ -55,7 +57,8 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-      <div className="grid place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-white text-black p-4">
+
+      <div className="flex flex-col place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-white text-black p-4">
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
         <div>{Label.WORK_TIME}</div>
       </div>
@@ -74,7 +77,8 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="flex flex-col text-start bg-gray-200 w-10/12 text-black">
+
+      <div className="flex flex-col text-center bg-gray-200 w-10/12 text-black">
         <div className="font-bold mx-4 mt-4">
           {Label.COMPLETE_FORM_LABEL.toUpperCase()}
         </div>
@@ -126,22 +130,22 @@ export default function Home() {
                 <span className="text-red-500"> Ingrese Notas</span>
               )}
             </div>
-            <div className="grid p-2 lg:w-10/12 w-12/12 md:w-10/12 rounded-md text-white">
-              <button
-                className="align-middle select-none font-sans font-bold uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none flex items-center gap-3"
-                type="submit"
-              >
-                <WhatsappLogo />
-                {Label.DELIVERY_lABEL}
-              </button>
-            </div>
+            <button
+              className="mt-4 align-middle select-none font-sans font-bold uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none items-center gap-3"
+              type="submit"
+            >
+              <div className="m-1 flex items-center">
+                <WhatsappLogo /> {Label.DELIVERY_lABEL}
+              </div>
+            </button>
           </form>
         </div>
       </div>
-      <div className="grid text-center bg-slate-200 lg:w-10/12 w-12/12 md:w-10/12 p-4">
+
+      <div className="flex flex-col text-center bg-slate-200 w-10/12 p-4">
         {Label.REGARDS_LABEL}
       </div>
-      <div className="grid text-center  bg-white p-4 lg:w-10/12 w-12/12 md:w-10/12 text-black font-extrabold">
+      <div className="flex flex-col  text-center bg-white p-2 w-10/12 text-black font-extrabold">
         {Label.AUTHOR}
       </div>
     </main>

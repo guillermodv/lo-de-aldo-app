@@ -1,7 +1,7 @@
 export enum Label {
   WORK_ZONE_TITLE = "Zona de entrega",
   SHOP_NAME = "PIZZERIA ALDO",
-  WORK_TIME_TITLE = "🕔Horarios",
+  WORK_TIME_TITLE = "🕔 Horarios",
   WORK_TIME = "Martes a Domingos de 19:00 a 23:00hs",
   DIGITAL_MENU_LABEL = "📱 Codigo QR para carta digital! ",
   REGARDS_LABEL = "😊 ¡Gracias por elegirnos!",
