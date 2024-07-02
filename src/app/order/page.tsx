@@ -13,8 +13,6 @@ export default function Page() {
     formState: { errors },
   } = useForm();
 
-  console.log("categories-->", categories);
-
   return (
     <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
       <form onSubmit={handleSubmit(onSubmit)}>

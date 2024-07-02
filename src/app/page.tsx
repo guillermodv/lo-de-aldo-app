@@ -1,5 +1,6 @@
 import OrderDetailForm from "@/components/orderDetailForm";
 import Image from "next/image";
+import Link from "next/link";
 import { Label } from "../constants/label";
 
 export default function Home() {
@@ -42,7 +43,9 @@ export default function Home() {
       </div>
       <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
         <div className="font-bold">{Label.SHOP_NAME}</div>
-        <div>{Label.DIGITAL_MENU_LABEL}</div>
+        <Link href="/menu" className="hover:font-extrabold font-normal">
+          {Label.DIGITAL_MENU_LABEL}
+        </Link>
       </div>
       <div className="flex flex-col text-center">
         <Image
