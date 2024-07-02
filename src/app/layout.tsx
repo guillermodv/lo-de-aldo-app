@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { Label } from "@/constants/label";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <footer>
+          <div className="flex flex-row font-sans hover:font-bold justify-evenly border-2 bg-red-500 bg-grey-100 p-1 w-full text-black font-extrabold">
+            {Label.AUTHOR}
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }

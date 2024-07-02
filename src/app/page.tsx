@@ -58,9 +58,6 @@ export default function Home() {
       <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-slate-200 text-black p-4">
         {Label.REGARDS_LABEL}
       </div>
-      <div className="flex flex-col font-sans hover:font-bold text-center bg-grey-100 p-2 w-10/12 text-black font-extrabold">
-        {Label.AUTHOR}
-      </div>
     </main>
   );
 }

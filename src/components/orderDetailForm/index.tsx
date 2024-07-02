@@ -1,11 +1,9 @@
 "use client";
-import { Label } from "@/constants/label";
 import { useForm } from "react-hook-form";
-import WhatsappLogo from "../whatsappLogo";
 
-const openInNewTab = (url: string): void => {
-  window.open(url, "_blank", "noreferrer");
-};
+import { Label } from "@/constants/label";
+import { onSubmit } from "@/util";
+import WhatsappLogo from "../whatsappLogo";
 
 export default function OrderDetailForm() {
   const {
@@ -14,21 +12,17 @@ export default function OrderDetailForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    openInNewTab(
-      `${Label.MESSAGE_DELIVERY} Pedido a nombre de: ${data.firstName} Direccion: ${data.address} Detalle: ${data.details} `
-    );
-  };
-
   return (
     <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
       <div className="font-bold mx-4 mt-4 mb-2">
-        {Label.COMPLETE_FORM_LABEL.toUpperCase()}
+        {Label.MENU_TITLE.toUpperCase()}
       </div>
       <div className="mx-4">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="py-1">
-            <label htmlFor="firstName">Nombre: </label>
+          <div className="py-1 flex flex-col">
+            <label className="font-sans" htmlFor="firstName">
+              Nombre:
+            </label>
             <input
               id="firstName"
               type="text"
@@ -39,12 +33,14 @@ export default function OrderDetailForm() {
               })}
             />
             {errors.firstName && (
-              <span className="text-red-500"> Ingrese Nombre</span>
+              <span className="font-sans text-red-500"> Ingrese Nombre</span>
             )}
           </div>
 
-          <div className="py-1">
-            <label htmlFor="address">Direccion: </label>
+          <div className="py-1 flex flex-col">
+            <label className="font-sans" htmlFor="address">
+              Direccion:
+            </label>
             <input
               id="address"
               type="text"
@@ -55,12 +51,14 @@ export default function OrderDetailForm() {
               })}
             />
             {errors.address && (
-              <span className="text-red-500"> Ingrese Dirección</span>
+              <span className="font-sans text-red-500">Ingrese Dirección</span>
             )}
           </div>
 
-          <div className="py-1">
-            <label htmlFor="details">Detalle: </label>
+          <div className="py-1 flex flex-col">
+            <label className="font-sans" htmlFor="details">
+              Detalle:
+            </label>
             <input
               id="details"
               type="text"
@@ -71,7 +69,9 @@ export default function OrderDetailForm() {
               })}
             />
             {errors.details && (
-              <span className="text-red-500">Ingrese detalle del pedido.</span>
+              <span className="text-red-500 font-sans">
+                Ingrese detalle del pedido.
+              </span>
             )}
           </div>
           <button
@@ -79,7 +79,7 @@ export default function OrderDetailForm() {
             type="submit"
           >
             <div className="m-1 flex items-center font-extrabold hover:font-bold">
-              <WhatsappLogo /> {Label.DELIVERY_lABEL}
+              <WhatsappLogo /> {Label.PRE_DELIVERY_lABEL}
             </div>
           </button>
         </form>
