@@ -37,11 +37,9 @@ export default function Page() {
             width={120}
             height={380}
           />
-
           <div className="font-bold mx-4 mt-4 mb-2">
             {Label.COMPLETE_FORM_LABEL.toUpperCase()}
           </div>
-
           <div className="font-mono md:text-xl text-sm">{`Buenas! ${firstName}`}</div>
           <div className="font-mono md:text-xl text-sm">
             {`Pedido a entregar en: ${address}`}
@@ -55,6 +53,7 @@ export default function Page() {
               </div>
               {category.subcategories?.map((subcategory, key) => (
                 <div key={key}>
+                  cate
                   <div className="flex flex-row w-full border-gray-400 border-2 mb-1 rounded-md bg-slate-200">
                     <div className="flex flex-row w-full justify-between  border-blue-400 border-2">
                       <div className="px-1 font-mono md:text-xl text-sm">
@@ -64,7 +63,12 @@ export default function Page() {
                         {subcategory.price}$ pesos
                       </div>
                       <div className="px-1 font-mono md:text-sm text-xs justify-end">
-                        {subcategory.price}$ pesos
+                        <input
+                          type="number"
+                          {...register(subcategory.name, {
+                            required: false,
+                          })}
+                        />
                       </div>
                     </div>
                   </div>
