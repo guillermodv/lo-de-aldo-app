@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Label } from "../constants/label";
 
+const mapUrl =
+  "https://maps.google.com/maps?q=Av.+Bartolom%C3%A9+Mitre+6412%2C+B1875+Wilde%2C+Provincia+de+Buenos+Aires&t=&z=15&ie=UTF8&iwloc=&output=embed";
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-between pt-2 w:12/12">
@@ -29,12 +32,7 @@ export default function Home() {
       <div className="flex flex-col place-items-center lg:w-10/12 w-12/12 md:w-10/12 bg-gray-300 p-2 font-extrabold md:text-xl">
         {Label.WORK_ZONE_TITLE.toUpperCase()}
         <div className="p-2">
-          <iframe
-            width="400"
-            height="300"
-            src="https://www.google.com.ar/maps/search/lo+de+aldo/@-34.7078065,-58.3335943,14.33z?hl=es&entry=ttu&output=embed"
-            title="Aldo"
-          ></iframe>
+          <iframe width="400" height="300" src={mapUrl} title="Aldo"></iframe>
         </div>
       </div>
       <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-white text-black p-4">
