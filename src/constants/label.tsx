@@ -12,6 +12,6 @@ export enum Label {
   TAKEIT_lABEL = "Chat whatsapp lo retiro",
   AUTHOR = "Aldo 2024",
   MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20Delivery:%20",
-  MAIN_PAGE_BACK = "Volver a la pagina principal",
+  MAIN_PAGE_BACK = "Ir a la pagina principal",
   SHOP_ADDRESS = "Av.Mitre 6412, B1875 Wilde, Bs As.",
 }
