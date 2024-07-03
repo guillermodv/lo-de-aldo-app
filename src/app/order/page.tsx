@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 
 import WhatsappLogo from "@/components/whatsappLogo";
 import { Label } from "@/constants/label";
-import { onSubmit } from "@/util";
 
 import BackLabel from "@/components/backLabel";
+import { cleanObject, openInNewTab } from "@/util";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { categories } from "../../data/categories";
@@ -19,12 +19,17 @@ export default function Page() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      firstName,
-      address,
-    },
-  });
+  } = useForm({});
+
+  const onSubmit = (data: any) => {
+    openInNewTab(
+      `${
+        Label.MESSAGE_DELIVERY
+      } Pedido a nombre de: ${firstName} Direccion: ${address} Pedido: ${JSON.stringify(
+        cleanObject(data)
+      )}`
+    );
+  };
 
   return (
     <div>
@@ -53,7 +58,6 @@ export default function Page() {
               </div>
               {category.subcategories?.map((subcategory, key) => (
                 <div key={key}>
-                  cate
                   <div className="flex flex-row w-full border-gray-400 border-2 mb-1 rounded-md bg-slate-200">
                     <div className="flex flex-row w-full justify-between  border-blue-400 border-2">
                       <div className="px-1 font-mono md:text-xl text-sm">
@@ -65,7 +69,7 @@ export default function Page() {
                       <div className="px-1 font-mono md:text-sm text-xs justify-end">
                         <input
                           type="number"
-                          {...register(subcategory.name, {
+                          {...register(`${subcategory.name}`, {
                             required: false,
                           })}
                         />
