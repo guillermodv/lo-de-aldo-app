@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/constants/label";
 
 export const openInNewTab = (url: string): void => {

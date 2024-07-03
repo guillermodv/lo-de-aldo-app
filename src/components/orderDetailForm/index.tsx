@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 
 import { Label } from "@/constants/label";
-import { onSubmit } from "@/util";
+import { useRouter } from "next/navigation";
 import WhatsappLogo from "../whatsappLogo";
 
 export default function OrderDetailForm() {
@@ -11,6 +11,11 @@ export default function OrderDetailForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
+
+  const onSubmit = () => {
+    router.push("/order");
+  };
 
   return (
     <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
