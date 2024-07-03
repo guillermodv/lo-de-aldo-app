@@ -15,6 +15,9 @@ type Product = {
   quantity: string;
 };
 
+/**
+ * An array of `Category` objects representing the categories and subcategories of products available in the application.
+ */
 const categories: Category[] = [
   {
     id: "1",

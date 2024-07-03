@@ -13,7 +13,7 @@ export default function Home() {
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
           src="/logotipo.jpeg"
-          alt="Logo Aldo"
+          alt="logo"
           width={540}
           height={480}
           priority
@@ -23,7 +23,7 @@ export default function Home() {
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
           src="/mercadopago.png"
-          alt="Logo Aldo"
+          alt="mp"
           width={540}
           height={150}
           priority
@@ -51,7 +51,7 @@ export default function Home() {
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
           src="/muzzarella.jpeg"
-          alt="Logo Aldo"
+          alt="Logo"
           width={640}
           height={80}
           priority

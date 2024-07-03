@@ -13,5 +13,5 @@ export enum Label {
   AUTHOR = "Aldo 2024",
   MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20Delivery:%20",
   MAIN_PAGE_BACK = "Volver a la pagina principal",
-  SHOP_ADDRESS = "Av. Bartolomé Mitre 6412, B1875 Wilde, Provincia de Buenos Aires",
+  SHOP_ADDRESS = "Av.Mitre 6412, B1875 Wilde, Bs As.",
 }
