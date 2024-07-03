@@ -32,10 +32,13 @@ export default function Home() {
           <iframe
             width="400"
             height="300"
-            src="https://maps.google.com/maps?q=wilde&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com.ar/maps/search/lo+de+aldo/@-34.7078065,-58.3335943,14.33z?hl=es&entry=ttu&output=embed"
             title="Aldo"
           ></iframe>
         </div>
+      </div>
+      <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-white text-black p-4">
+        <div className="font-bold">{Label.SHOP_ADDRESS.toUpperCase()}</div>
       </div>
       <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-white text-black p-4">
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>

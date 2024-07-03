@@ -11,6 +11,7 @@ export enum Label {
   PRE_DELIVERY_lABEL = "Completar el pedido",
   TAKEIT_lABEL = "Chat whatsapp lo retiro",
   AUTHOR = "Aldo 2024",
-  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20pizza%20delivery:%20",
+  MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20Delivery:%20",
   MAIN_PAGE_BACK = "Volver a la pagina principal",
+  SHOP_ADDRESS = "Av. Bartolomé Mitre 6412, B1875 Wilde, Provincia de Buenos Aires",
 }
