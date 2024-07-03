@@ -80,6 +80,70 @@ const categories: Category[] = [
       },
     ],
   },
+  {
+    id: "3",
+    name: "Empanadas",
+    description: "Amplia variedad en empanadas",
+    image: "https://i.imgur.com/2310245.jpg",
+    subcategories: [
+      {
+        id: "1",
+        name: "Capresse",
+        description: "Rellenas de tomate, albaca y queso",
+        image: "/muzza.jpeg",
+        price: "8",
+        quantity: "15",
+      },
+      {
+        id: "2",
+        name: "Carne",
+        description: "Rellenas de carne",
+        image: "/muzza.jpeg",
+        price: "12",
+        quantity: "12",
+      },
+      {
+        id: "3",
+        name: "Pollo",
+        description: "Rellenas de pollo",
+        image: "/muzza.jpeg",
+        price: "15",
+        quantity: "10",
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Pizza",
+    description: "Amplia variedad en pizzas a la piedra",
+    image: "https://i.imgur.com/2310245.jpg",
+    subcategories: [
+      {
+        id: "1",
+        name: "Muzzarella",
+        description: "Muzzarella, salsa de tomate, aceitunas",
+        image: "/muzza.jpeg",
+        price: "8",
+        quantity: "15",
+      },
+      {
+        id: "2",
+        name: "Scalonetta",
+        description: "Albaca, tomate cherry, aceitunas y queso",
+        image: "/muzza.jpeg",
+        price: "24",
+        quantity: "12",
+      },
+      {
+        id: "3",
+        name: "Fugazzeta",
+        description: "Cebolla, queso, jamon",
+        image: "/muzzarella.jpeg",
+        price: "15",
+        quantity: "10",
+      },
+    ],
+  },
   // Puedes agregar más categorías aquí según necesites
 ];
 

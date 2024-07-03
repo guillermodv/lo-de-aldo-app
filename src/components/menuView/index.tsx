@@ -1,5 +1,6 @@
 import { categories } from "@/data/categories";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MenuForm() {
   return (
@@ -13,8 +14,11 @@ export default function MenuForm() {
       />
       {categories?.map((category, key) => (
         <div className="md:w-4/5 w-full px-2" key={key}>
-          <div className="font-bold text-2xl">
-            {category.name.toUpperCase()}
+          <div className="flex flex-col">
+            <div className="font-bold text-2xl pt-2">
+              {category.name.toUpperCase()}
+            </div>
+            <div className="text-2xl"> {category.description}</div>
           </div>
           {category.subcategories?.map((subcategory, key) => (
             <div key={key}>
@@ -48,6 +52,12 @@ export default function MenuForm() {
           ))}
         </div>
       ))}
+      <Link
+        href="/"
+        className="hover:font-extrabold font-2xl text-black justify-start"
+      >
+        Volver a la pagina principal
+      </Link>
     </div>
   );
 }
