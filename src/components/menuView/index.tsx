@@ -1,11 +1,11 @@
 import { categories } from "@/data/categories";
 import Image from "next/image";
-import Link from "next/link";
+import BackLabel from "../backLabel";
 
-type MenuForm = {
+interface MenuForm {
   showDescriptions: boolean;
   showImage: boolean;
-};
+}
 
 export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
   return (
@@ -59,12 +59,7 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
           ))}
         </div>
       ))}
-      <Link
-        href="/"
-        className="hover:font-extrabold text-2xl text-black justify-start p-2"
-      >
-        Volver a la pagina principal
-      </Link>
+      <BackLabel />
     </div>
   );
 }

@@ -7,6 +7,6 @@ export const openInNewTab = (url: string): void => {
 
 export const onSubmit = (data: any) => {
   openInNewTab(
-    `${Label.MESSAGE_DELIVERY} Pedido a nombre de: ${data.firstName} Direccion: ${data.address} Detalle: ${data.details} `
+    `${Label.MESSAGE_DELIVERY} Pedido a nombre de: ${data.firstName} Direccion: ${data.address}`
   );
 };

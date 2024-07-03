@@ -13,8 +13,8 @@ export default function OrderDetailForm() {
   } = useForm();
   const router = useRouter();
 
-  const onSubmit = () => {
-    router.push("/order");
+  const onSubmit = (data: any) => {
+    router.push(`/order?firstName=${data.firstName}&address=${data.address}`);
   };
 
   return (
