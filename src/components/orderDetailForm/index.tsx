@@ -15,7 +15,7 @@ export default function OrderDetailForm() {
   return (
     <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
       <div className="font-bold mx-4 mt-4 mb-2">
-        {Label.MENU_TITLE.toUpperCase()}
+        {Label.COMPLETE_FORM_LABEL.toUpperCase()}
       </div>
       <div className="mx-4">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -52,26 +52,6 @@ export default function OrderDetailForm() {
             />
             {errors.address && (
               <span className="font-sans text-red-500">Ingrese Dirección</span>
-            )}
-          </div>
-
-          <div className="py-1 flex flex-col">
-            <label className="font-sans" htmlFor="details">
-              Detalle:
-            </label>
-            <input
-              id="details"
-              type="text"
-              {...register("details", {
-                required: true,
-                minLength: 2,
-                maxLength: 120,
-              })}
-            />
-            {errors.details && (
-              <span className="text-red-500 font-sans">
-                Ingrese detalle del pedido.
-              </span>
             )}
           </div>
           <button

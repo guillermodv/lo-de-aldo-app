@@ -1,7 +1,7 @@
 import MenuForm from "@/components/menuView";
 
 function Menu() {
-  return <MenuForm />;
+  return <MenuForm showDescriptions={false} showImage={false} />;
 }
 
 export default Menu;
