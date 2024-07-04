@@ -29,7 +29,8 @@ export default function OrderForm() {
       )
         .replace(/"/g, "")
         .replace("{", "")
-        .replace("}", "")}`
+        .replace("}", "")
+        .replace(",", " ")}`
     );
   };
   return (
