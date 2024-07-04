@@ -19,6 +19,8 @@ export const onSubmit = (data: any) => {
   openInNewTab(
     `${Label.MESSAGE_DELIVERY} Pedido a nombre de: ${
       data.firstName
-    } Direccion: ${data.address} Pedido: ${JSON.stringify(cleanObject(data))}`
+    } Direccion: ${data.address} Pedido: ${JSON.stringify(
+      cleanObject(data)
+    ).replace('"', "")}`
   );
 };
