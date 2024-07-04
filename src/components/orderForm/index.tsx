@@ -24,7 +24,7 @@ export default function OrderForm() {
     openInNewTab(
       `${
         Label.MESSAGE_DELIVERY
-      } Pedido a nombre de: ${firstName} Direccion: ${address} Pedido: ${JSON.stringify(
+      } Pedido a nombre de: ${firstName}, Direccion: ${address}, Pedido: ${JSON.stringify(
         cleanObject(data)
       )
         .replace(/"/g, "")
