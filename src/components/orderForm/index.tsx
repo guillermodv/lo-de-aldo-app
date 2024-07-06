@@ -22,6 +22,7 @@ export default function OrderForm() {
   } = useForm({});
 
   const onSubmit = (data: any) => {
+    console.log("data--->", data);
     openInNewTab(
       `${
         Label.MESSAGE_DELIVERY
@@ -78,9 +79,12 @@ export default function OrderForm() {
                               !/[0-9]/.test(e.key) && e.preventDefault()
                             }
                             placeholder="0"
-                            {...register(`${subcategory.name}`, {
-                              required: false,
-                            })}
+                            {...register(
+                              `${category.name}-${subcategory.name}`,
+                              {
+                                required: false,
+                              }
+                            )}
                           />
                         </div>
                       </div>
