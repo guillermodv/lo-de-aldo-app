@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { useForm } from "react-hook-form";
 
-import { categories } from "../../data/categories";
+import { shop } from "../../data/shopData";
 import BackLabel from "../backLabel";
 import WhatsappLogo from "../whatsappLogo";
 
@@ -13,6 +13,7 @@ export default function OrderForm() {
   const searchParams = useSearchParams();
   const firstName = searchParams.get("firstName");
   const address = searchParams.get("address");
+  const categories = shop.categories;
 
   const {
     register,
@@ -72,7 +73,6 @@ export default function OrderForm() {
                         <div className="px-1 font-mono md:text-sm text-xs">
                           <input
                             type="number"
-                            id="quantity-input"
                             className="bg-gray-50 border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block py-2.5 w-16 h-8"
                             onKeyPress={(e) =>
                               !/[0-9]/.test(e.key) && e.preventDefault()

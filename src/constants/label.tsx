@@ -1,17 +1,14 @@
 export enum Label {
   WORK_ZONE_TITLE = "Zona de entrega",
   MENU_TITLE = "Menu",
-  SHOP_NAME = "PIZZERIA ALDO",
   WORK_TIME_TITLE = "🕔 Horarios",
-  WORK_TIME = "Martes a Domingos de 19:00 a 23:00hs",
   DIGITAL_MENU_LABEL = "📱 Ver el menu digital! ",
   REGARDS_LABEL = "😊 ¡Gracias por elegirnos!",
   COMPLETE_FORM_LABEL = "Ingrese el pedido:",
   DELIVERY_lABEL = "Enviar pedido por Whatsapp",
   PRE_DELIVERY_lABEL = "Completar el pedido",
   TAKEIT_lABEL = "Chat whatsapp lo retiro",
-  AUTHOR = "Aldo 2024",
+  AUTHOR = "airdev 2024",
   MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=Pedido%20_Delivery_:%20",
   MAIN_PAGE_BACK = "Ir a la pagina principal",
-  SHOP_ADDRESS = "Av.Mitre 6412, B1875 Wilde, Bs As.",
 }

@@ -1,4 +1,4 @@
-import { categories } from "@/data/categories";
+import { shop } from "@/data/shopData";
 import Image from "next/image";
 import BackLabel from "../backLabel";
 
@@ -8,6 +8,7 @@ interface MenuForm {
 }
 
 export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
+  const categories = shop.categories;
   return (
     <div className="flex flex-col place-items-center w-full bg-gray-200 text-black">
       <Image
@@ -40,9 +41,11 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
                         {subcategory.price}$ pesos
                       </div>
                     </div>
-                    <div className="font-bold px-1 text-xs md:text-base">
-                      {subcategory.description}
-                    </div>
+                    {subcategory.description && (
+                      <div className="font-bold px-1 text-xs md:text-base">
+                        {subcategory.description}
+                      </div>
+                    )}
                   </div>
                   {showImage && (
                     <div className="flex flex-end">

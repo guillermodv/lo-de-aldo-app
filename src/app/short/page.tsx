@@ -2,6 +2,8 @@ import OrderDetailForm from "@/components/orderDetailForm";
 import { Label } from "@/constants/label";
 import Image from "next/image";
 
+import { shop } from "../../data/shopData";
+
 const mapUrl =
   "https://maps.google.com/maps?q=Av.+Bartolom%C3%A9+Mitre+6412%2C+B1875+Wilde%2C+Provincia+de+Buenos+Aires&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
@@ -30,7 +32,7 @@ export default function Short() {
       </div>
       <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-white text-black p-4">
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
-        <div>{Label.WORK_TIME}</div>
+        <div>{shop.timezone}</div>
       </div>
       <OrderDetailForm />
       <div className="flex flex-col place-items-center lg:w-10/12  w-96 md:w-10/12 bg-slate-200 text-black p-4">
