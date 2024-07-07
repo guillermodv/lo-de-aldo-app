@@ -43,7 +43,7 @@ export default function Home() {
         <div className="font-bold">{Label.WORK_TIME_TITLE.toUpperCase()}</div>
         <div>{shop.timezone}</div>
       </div>
-      <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-gray-200 text-black p-4">
+      <div className="flex flex-col place-items-center lg:w-10/12 w-96 md:w-10/12 bg-orange-400 text-black p-4">
         <Link href="/menu" className="hover:font-extrabold font-normal text-xl">
           {Label.DIGITAL_MENU_LABEL}
         </Link>

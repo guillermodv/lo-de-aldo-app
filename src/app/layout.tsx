@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <footer>
-          <div className="flex flex-row font-sans hover:font-bold justify-evenly border-2 bg-red-500 bg-grey-100 p-1 w-full text-black font-extrabold">
+          <div className="flex flex-row font-sans hover:font-bold justify-evenly border-2 bg-orange-400 bg-grey-100 p-1 w-full text-black font-extrabold">
             {Label.AUTHOR}
           </div>
         </footer>
