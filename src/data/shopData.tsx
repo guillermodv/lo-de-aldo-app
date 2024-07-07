@@ -34,7 +34,7 @@ const categories: Category[] = [
     subcategories: [
       {
         id: "1",
-        name: "4 Quesos",
+        name: "Cuatro Quesos",
         description: "",
         image: "/muzza.jpeg",
         price: "8",
@@ -244,7 +244,7 @@ const categories: Category[] = [
       },
       {
         id: "3",
-        name: "Carne",
+        name: "Pollo",
         description: "",
         image: "/muzza.jpeg",
         price: "1000",
@@ -397,7 +397,7 @@ const categories: Category[] = [
       },
       {
         id: "12",
-        name: "4 Quesos",
+        name: "Cuatro Quesos",
         description: "",
         image: "/muzza.jpeg",
         price: "10",
@@ -425,9 +425,9 @@ const categories: Category[] = [
 
 const shop = {
   name: "PIZZERIA ALDO",
-  address: "Av.Mitre 6412, B1875 Wilde, Bs As.",
+  address: "Av.Mitre 6412, Wilde, Bs As.",
   phone: "5491165550438",
-  timezone: "De martes a domigos de 19hs a 23hs.",
+  timezone: "De martes a domingos de 19hs a 23hs.",
   categories: categories,
 };
 
