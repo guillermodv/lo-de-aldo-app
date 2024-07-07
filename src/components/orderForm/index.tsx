@@ -65,11 +65,13 @@ export default function OrderForm() {
                   <div key={key}>
                     <div className="flex flex-row w-full border-gray-400 border-2 mb-1 rounded-md bg-slate-200">
                       <div className="flex flex-row w-full justify-between  border-blue-400 border-2">
-                        <div className="px-1 font-mono md:text-xl text-xs">
-                          {subcategory.name}
-                        </div>
-                        <div className="px-1 font-mono md:text-sm text-xs">
-                          {subcategory.price}$ pesos
+                        <div className="flex flex-col">
+                          <div className="px-1 font-bold md:text-xl text-xs">
+                            {subcategory.name}
+                          </div>
+                          <div className="px-1 font-mono md:text-sm text-xs">
+                            {subcategory.price}$ pesos
+                          </div>
                         </div>
                         <div className="px-1 font-mono md:text-sm text-xs">
                           <input
