@@ -4,9 +4,6 @@ import Image from "next/image";
 
 import { shop } from "../../data/shopData";
 
-const mapUrl =
-  "https://maps.google.com/maps?q=Av.+Bartolom%C3%A9+Mitre+6412%2C+B1875+Wilde%2C+Provincia+de+Buenos+Aires&t=&z=15&ie=UTF8&iwloc=&output=embed";
-
 export default function Short() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-between pt-2 w:12/12">

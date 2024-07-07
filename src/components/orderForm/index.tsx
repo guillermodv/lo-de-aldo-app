@@ -22,7 +22,6 @@ export default function OrderForm() {
   } = useForm({});
 
   const onSubmit = (data: any) => {
-    console.log("data--->", data);
     openInNewTab(
       `${
         Label.MESSAGE_DELIVERY
