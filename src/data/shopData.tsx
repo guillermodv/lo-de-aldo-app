@@ -37,7 +37,7 @@ const categories: Category[] = [
         name: "Cuatro Quesos",
         description: "",
         image: "/muzza.jpeg",
-        price: "8",
+        price: "1",
         quantity: "15",
       },
       {
@@ -45,7 +45,7 @@ const categories: Category[] = [
         name: "A la cancha",
         description: "",
         image: "/muzza.jpeg",
-        price: "8",
+        price: "9000",
         quantity: "15",
       },
       {
@@ -53,7 +53,7 @@ const categories: Category[] = [
         name: "Americana",
         description: "",
         image: "/muzza.jpeg",
-        price: "8",
+        price: "13000",
         quantity: "15",
       },
       {
@@ -167,7 +167,7 @@ const categories: Category[] = [
         name: "Muzzarella",
         description: "",
         image: "/muzza.jpeg",
-        price: "8",
+        price: "10000",
         quantity: "15",
       },
       {
@@ -231,7 +231,7 @@ const categories: Category[] = [
         name: "Capresse",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "15",
       },
       {
@@ -239,7 +239,7 @@ const categories: Category[] = [
         name: "Carne",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "12",
       },
       {
@@ -247,7 +247,7 @@ const categories: Category[] = [
         name: "Pollo",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "12",
       },
       {
@@ -255,7 +255,7 @@ const categories: Category[] = [
         name: "Verdura",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "12",
       },
       {
@@ -263,7 +263,7 @@ const categories: Category[] = [
         name: "Jamon y queso",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "12",
       },
       {
@@ -271,7 +271,7 @@ const categories: Category[] = [
         name: "Pollo",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "10",
       },
       {
@@ -279,7 +279,7 @@ const categories: Category[] = [
         name: "Roquefort",
         description: "",
         image: "/muzza.jpeg",
-        price: "1000",
+        price: "1300",
         quantity: "12",
       },
     ],
@@ -295,7 +295,7 @@ const categories: Category[] = [
         name: "Tarta tricolor",
         description: "",
         image: "/muzza.jpeg",
-        price: "1",
+        price: "2500",
         quantity: "10",
       },
       {
@@ -303,7 +303,7 @@ const categories: Category[] = [
         name: "Tarta de verdura",
         description: "",
         image: "/muzza.jpeg",
-        price: "90",
+        price: "2300",
         quantity: "10",
       },
       {
@@ -311,7 +311,7 @@ const categories: Category[] = [
         name: "Tarta de Jamon y queso",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -319,7 +319,7 @@ const categories: Category[] = [
         name: "Tarta de Zapallito",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
 
@@ -328,7 +328,7 @@ const categories: Category[] = [
         name: "Fugazzeta con queso",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -336,7 +336,7 @@ const categories: Category[] = [
         name: "Fugazzeta Jamon y Queso",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -344,7 +344,7 @@ const categories: Category[] = [
         name: "Faina",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -352,7 +352,7 @@ const categories: Category[] = [
         name: "Muzza",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -360,7 +360,7 @@ const categories: Category[] = [
         name: "Verdura",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -368,7 +368,7 @@ const categories: Category[] = [
         name: "Americana",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -376,7 +376,7 @@ const categories: Category[] = [
         name: "Fugazza",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -384,7 +384,7 @@ const categories: Category[] = [
         name: "Provologne",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -392,7 +392,7 @@ const categories: Category[] = [
         name: "Napolitana",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -400,7 +400,7 @@ const categories: Category[] = [
         name: "Cuatro Quesos",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -408,7 +408,7 @@ const categories: Category[] = [
         name: "Calabreza",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
       {
@@ -416,7 +416,7 @@ const categories: Category[] = [
         name: "Calzones",
         description: "",
         image: "/muzza.jpeg",
-        price: "10",
+        price: "2300",
         quantity: "20",
       },
     ],
