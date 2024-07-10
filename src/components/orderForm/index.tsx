@@ -89,7 +89,7 @@ export default function OrderForm() {
                                 max="10"
                                 placeholder="0"
                                 {...register(
-                                  `${category.name}-${subcategory.name}-MITAD`,
+                                  `${category.name}-mitad-${subcategory.name}`,
                                   {
                                     required: false,
                                   }
@@ -110,7 +110,7 @@ export default function OrderForm() {
                                 max="10"
                                 placeholder="0"
                                 {...register(
-                                  `${category.name}-${subcategory.name}-CHICA`,
+                                  `${category.name}-chica-${subcategory.name}`,
                                   {
                                     required: false,
                                   }
@@ -132,9 +132,9 @@ export default function OrderForm() {
                               max="10"
                               placeholder="0"
                               {...register(
-                                `${category.name}-${subcategory.name}${
-                                  subcategory.price_small ? "-GRANDE" : ""
-                                }`,
+                                `${category.name}${
+                                  subcategory.price_small ? "-grande" : ""
+                                }-${subcategory.name}`,
                                 {
                                   required: false,
                                 }

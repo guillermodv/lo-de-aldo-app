@@ -29,7 +29,7 @@ type Product = {
 const categories: Category[] = [
   {
     id: "1",
-    name: "Pizzas",
+    name: "Pizza",
     description: "Amplia variedad en pizzas a la piedra",
     image: "https://i.imgur.com/2310245.jpg",
     subcategories: [
@@ -264,7 +264,7 @@ const categories: Category[] = [
   },
   {
     id: "2",
-    name: "Empanadas",
+    name: "Empanada",
     description: "Precio por docena 15600$",
     image: "https://i.imgur.com/2310245.jpg",
     subcategories: [
@@ -328,13 +328,13 @@ const categories: Category[] = [
   },
   {
     id: "4",
-    name: "Calzones",
+    name: "Calzon",
     description: "",
     image: "https://i.imgur.com/3134089.jpg",
     subcategories: [
       {
         id: "1",
-        name: "Calzon Al Roquefort",
+        name: "Roquefort",
         description: "",
         image: "/muzza.jpeg",
         price: "15000",
@@ -342,7 +342,7 @@ const categories: Category[] = [
       },
       {
         id: "2",
-        name: "Calzon Jamon-Queso-Roque",
+        name: "Jamon-Queso-Roque",
         description: "",
         image: "/muzza.jpeg",
         price: "17000",
@@ -350,7 +350,7 @@ const categories: Category[] = [
       },
       {
         id: "3",
-        name: "Calzon Jamon-Queso-Tomate-Huevo",
+        name: "Jamon-Queso-Tomate-Huevo",
         description: "",
         image: "/muzza.jpeg",
         price: "14000",
@@ -358,7 +358,7 @@ const categories: Category[] = [
       },
       {
         id: "4",
-        name: "Calzon Jamon-Queso",
+        name: "Jamon-Queso",
         description: "",
         image: "/muzza.jpeg",
         price: "13000",
@@ -367,7 +367,7 @@ const categories: Category[] = [
 
       {
         id: "5",
-        name: "Calzon Napolitano",
+        name: "Napolitano",
         description: "",
         image: "/muzza.jpeg",
         price: "13000",
