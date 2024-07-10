@@ -10,7 +10,7 @@ export default function Short() {
       <div className="flex flex-col place-item-center">
         <Image
           className="relative drop-shadow-[0_0_0.3rem_#ffffff70] "
-          src="/logotipo.jpeg"
+          src="/logo.jpeg"
           alt="logo"
           width={340}
           height={180}

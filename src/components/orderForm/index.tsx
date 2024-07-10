@@ -40,7 +40,7 @@ export default function OrderForm() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col place-items-center w-full bg-gray-200 text-black">
             <Image
-              src="/logotipo.jpeg"
+              src="/logo.jpeg"
               className="mx-4 my-2"
               alt="Logo Aldo"
               width={120}

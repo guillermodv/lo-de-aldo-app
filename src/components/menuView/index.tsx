@@ -12,7 +12,7 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
   return (
     <div className="flex flex-col place-items-center w-full bg-gray-200 text-black">
       <Image
-        src="/logotipo.jpeg"
+        src="/logo.jpeg"
         className="mx-4 my-2"
         alt="Logo Aldo"
         width={190}
@@ -24,8 +24,8 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
             <div className="font-bold text-xl pt-2">
               {category.name.toUpperCase()}
             </div>
-            {showDescriptions && (
-              <div className="text-xl"> {category.description}</div>
+            {showDescriptions && category.description && (
+              <div className="sm:text-xl"> {category.description}</div>
             )}
           </div>
           {category.subcategories?.map((subcategory, key) => (
