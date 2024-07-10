@@ -25,7 +25,7 @@ export default function OrderForm() {
     openInNewTab(
       `${
         Label.MESSAGE_DELIVERY
-      } a nombre de: ${firstName}, Direccion: ${address}, Pedido: ${JSON.stringify(
+      } *Nombre:* ${firstName}, *Direccion:* ${address}, *Pedido:* ${JSON.stringify(
         cleanObject(data)
       )
         .replace(/"/g, "")
@@ -46,7 +46,7 @@ export default function OrderForm() {
               width={120}
               height={380}
             />
-            <div className="font-bold mx-4 mt-4 mb-2">
+            <div className="font-bold mx-4 mt-4 mb-2 text-green-800">
               {Label.COMPLETE_FORM_LABEL.toUpperCase()}
             </div>
             <div className="font-mono md:text-xl text-sm">{`Hola! ${firstName}`}</div>
@@ -56,7 +56,7 @@ export default function OrderForm() {
             {categories?.map((category, key) => (
               <div className="md:w-4/5 w-full px-2" key={key}>
                 <div className="flex flex-col">
-                  <div className="font-bold md:text-xl text-sm pt-2">
+                  <div className="font-bold md:text-xl text-orange-500 text-sm pt-2">
                     {category.name.toUpperCase()}
                   </div>
                 </div>
@@ -68,27 +68,79 @@ export default function OrderForm() {
                           <div className="px-1 font-bold md:text-xl text-xs">
                             {subcategory.name}
                           </div>
+                          <div className="px-1 md:text-xl text-xs">
+                            {subcategory.description}
+                          </div>
                           <div className="px-1 font-mono md:text-sm text-xs">
-                            {subcategory.price}$ pesos
+                            ${subcategory.price}
                           </div>
                         </div>
-                        <div className="px-1 font-mono md:text-sm text-xs">
-                          <input
-                            type="number"
-                            className="bg-gray-50 mt-2 border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block py-2.5 w-16 h-8"
-                            onKeyPress={(e) =>
-                              !/[0-9]/.test(e.key) && e.preventDefault()
-                            }
-                            min="0"
-                            max="10"
-                            placeholder="0"
-                            {...register(
-                              `${category.name}-${subcategory.name}`,
-                              {
-                                required: false,
-                              }
+                        <div className="flex justify-end">
+                          {subcategory.price_small && (
+                            <div className="font-mono md:text-sm text-xs py-1">
+                              <div className="mx-4">Mitad</div>
+                              <input
+                                type="number"
+                                className="bg-gray-50  border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block py-2 w-16 h-8"
+                                onKeyPress={(e) =>
+                                  !/[0-9]/.test(e.key) && e.preventDefault()
+                                }
+                                min="0"
+                                max="10"
+                                placeholder="0"
+                                {...register(
+                                  `${category.name}-${subcategory.name}-MITAD`,
+                                  {
+                                    required: false,
+                                  }
+                                )}
+                              />
+                            </div>
+                          )}
+                          {subcategory.price_small && (
+                            <div className="font-mono md:text-sm text-xs py-1">
+                              <div className="mx-4">Chica</div>
+                              <input
+                                type="number"
+                                className="bg-gray-50  border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block py-2 w-16 h-8"
+                                onKeyPress={(e) =>
+                                  !/[0-9]/.test(e.key) && e.preventDefault()
+                                }
+                                min="0"
+                                max="10"
+                                placeholder="0"
+                                {...register(
+                                  `${category.name}-${subcategory.name}-CHICA`,
+                                  {
+                                    required: false,
+                                  }
+                                )}
+                              />
+                            </div>
+                          )}
+                          <div className="font-mono md:text-sm text-xs py-1">
+                            {subcategory.price_small && (
+                              <div className="mx-1.5">Grande</div>
                             )}
-                          />
+                            <input
+                              type="number"
+                              className="bg-gray-50 border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-16 h-8"
+                              onKeyPress={(e) =>
+                                !/[0-9]/.test(e.key) && e.preventDefault()
+                              }
+                              min="0"
+                              max="10"
+                              placeholder="0"
+                              {...register(
+                                `${category.name}-${subcategory.name}${
+                                  subcategory.price_small ? "-GRANDE" : ""
+                                }`,
+                                {
+                                  required: false,
+                                }
+                              )}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -21,7 +21,7 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
       {categories?.map((category, key) => (
         <div className="md:w-4/5 w-full px-2" key={key}>
           <div className="flex flex-col">
-            <div className="font-bold text-xl pt-2">
+            <div className="font-bold text-xl pt-2 text-orange-500">
               {category.name.toUpperCase()}
             </div>
             {showDescriptions && category.description && (
@@ -38,7 +38,7 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
                         {subcategory.name}
                       </div>
                       <div className="px-1 font-mono  text-xs md:text-base justify-end">
-                        {subcategory.price}$ pesos
+                        ${subcategory.price}
                       </div>
                     </div>
                     {subcategory.description && (
