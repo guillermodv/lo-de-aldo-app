@@ -78,27 +78,6 @@ export default function OrderForm() {
                         <div className="flex justify-end">
                           {subcategory.price_small && (
                             <div className="font-mono md:text-sm text-xs py-1">
-                              <div className="mx-4">Mitad</div>
-                              <input
-                                type="number"
-                                className="bg-gray-50  border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block py-2 w-16 h-8"
-                                onKeyPress={(e) =>
-                                  !/[0-9]/.test(e.key) && e.preventDefault()
-                                }
-                                min="0"
-                                max="10"
-                                placeholder="0"
-                                {...register(
-                                  `${category.name}-mitad-${subcategory.name}`,
-                                  {
-                                    required: false,
-                                  }
-                                )}
-                              />
-                            </div>
-                          )}
-                          {subcategory.price_small && (
-                            <div className="font-mono md:text-sm text-xs py-1">
                               <div className="mx-4">Chica</div>
                               <input
                                 type="number"
