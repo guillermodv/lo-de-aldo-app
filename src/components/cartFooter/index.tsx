@@ -2,7 +2,7 @@ import Link from "next/link";
 
 interface props {
   productCount: number;
-  params: string;
+  params: any;
 }
 
 export default function CartFooter({ productCount, params }: props) {
