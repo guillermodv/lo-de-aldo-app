@@ -18,7 +18,8 @@ export default function CartSummary({ cartItems, setCart }: props) {
 
   const calculateSum = useCallback(() => {
     return cartItems.reduce(
-      (sum: number, item) => sum + (item.product?.price || 0) * item.quantity,
+      (sum: number, item) =>
+        sum + ((item.product?.price || 0) as number) * item.quantity,
       0
     );
   }, [cartItems]);
