@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
 interface props {
   productCount: number;
@@ -12,12 +13,14 @@ export default function CartFooter({ productCount, params }: props) {
         <span className="font-bold text-lg">Productos en el carrito:</span>
         <span className="text-xl ml-2">{productCount}</span>
       </div>
-      <Link
-        href={`/cartPayment?${params}`}
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
-      >
-        Ver Carrito
-      </Link>
+      <Suspense>
+        <Link
+          href={`/cartPayment?${params}`}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+        >
+          Ver Carrito
+        </Link>
+      </Suspense>
     </footer>
   );
 }
