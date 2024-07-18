@@ -1,16 +1,12 @@
 "use client";
 
 import { Label } from "@/constants/label";
+import { CartContext } from "@/context";
 import { Inter } from "next/font/google";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const CartContext = createContext({
-  cart: [],
-  setCart: (p0: any) => {},
-});
 
 export default function RootLayout({
   children,

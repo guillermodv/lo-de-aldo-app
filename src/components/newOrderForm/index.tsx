@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useContext } from "react";
 import { useForm } from "react-hook-form";
 
-import { CartContext } from "@/app/layout";
+import { CartContext } from "@/context";
 import { Product, shop } from "../../data/shopData";
 import BackLabel from "../backLabel";
 import CartFooter from "../cartFooter";
