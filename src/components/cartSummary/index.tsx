@@ -51,8 +51,8 @@ export default function CartSummary({ cartItems, setCart }: props) {
               <div key={item.id} className="grid grid-cols-4 mb-2">
                 <div className="flex items-center col-span-2">
                   <div className="ml-2">
-                    <p className="text-sm">{item.product?.name}</p>
-                    <p className="text-gray-500 text-xs">
+                    <p className="md:text-xl text-sm">{item.product?.name}</p>
+                    <p className="text-gray-500 md:text-md text-xs">
                       Cantidad: {item.quantity}
                     </p>
                   </div>

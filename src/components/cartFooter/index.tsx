@@ -10,7 +10,9 @@ export default function CartFooter({ productCount, params }: props) {
   return (
     <footer className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex justify-between items-center">
       <div>
-        <span className="font-bold text-lg">Productos en el carrito:</span>
+        <span className="font-bold text-lg text-orange-500">
+          Productos seleccionados:
+        </span>
         <span className="text-xl ml-2 transition transform hover:scale-110">
           {productCount}
         </span>
