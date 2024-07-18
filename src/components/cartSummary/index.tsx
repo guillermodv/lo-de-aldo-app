@@ -52,11 +52,6 @@ export default function CartSummary({ cartItems, setCart }: props) {
             {cartItems.map((item) => (
               <div key={item.id} className="grid grid-cols-4 mb-2">
                 <div className="flex items-center col-span-2">
-                  <img
-                    src={item.product?.image}
-                    alt={item.product?.name}
-                    className="w-12 h-12 object-cover rounded"
-                  />
                   <div className="ml-2">
                     <p className="text-sm">{item.product?.name}</p>
                     <p className="text-gray-500 text-xs">
