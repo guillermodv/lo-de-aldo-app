@@ -1,13 +1,19 @@
 import { Label } from "@/constants/label";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useContext } from "react";
+import { Suspense, useCallback, useContext } from "react";
 
 import { CartContext } from "@/context";
 import { CartItem, Product, shop } from "../../data/shopData";
 import BackLabel from "../backLabel";
 import CartFooter from "../cartFooter";
 import GoBackButton from "../goBackButton";
+
+const selectedStyle =
+  "bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded";
+
+const nonSelectedStyle =
+  "bg-blue-500 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded";
 
 export default function NewOrderForm() {
   const searchParams = useSearchParams();
@@ -26,6 +32,13 @@ export default function NewOrderForm() {
     const newCart = [...oldCart, productCart];
     setCart(newCart);
   };
+
+  const isSelected = useCallback(
+    (name: string) => {
+      return cart.some((item: CartItem) => item.product.name === name);
+    },
+    [cart]
+  );
 
   return (
     <Suspense>
@@ -73,7 +86,11 @@ export default function NewOrderForm() {
                           </div>
                           <button
                             onClick={() => onAdd(subcategory, 1)}
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            className={
+                              isSelected(subcategory.name)
+                                ? selectedStyle
+                                : nonSelectedStyle
+                            }
                           >
                             +
                           </button>

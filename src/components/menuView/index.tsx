@@ -1,6 +1,7 @@
 import { shop } from "@/data/shopData";
 import Image from "next/image";
 import BackLabel from "../backLabel";
+import MenuRow from "../MenuRow";
 
 interface MenuForm {
   showDescriptions: boolean;
@@ -30,36 +31,7 @@ export default function MenuForm({ showDescriptions, showImage }: MenuForm) {
           </div>
           {category.subcategories?.map((subcategory, key) => (
             <div key={key}>
-              <div>
-                <div className="flex flex-row justify-between  border-gray-600 border-2 mb-1 rounded-md bg-slate-300">
-                  <div className="flex flex-col w-4/5">
-                    <div className="flex flex-row justify-between">
-                      <div className="px-1 font-mono text-xs md:text-base">
-                        {subcategory.name}
-                      </div>
-                      <div className="px-1 font-mono  text-xs md:text-base justify-end">
-                        ${subcategory.price}
-                      </div>
-                    </div>
-                    {subcategory.description && (
-                      <div className="font-bold px-1 text-xs md:text-base">
-                        {subcategory.description}
-                      </div>
-                    )}
-                  </div>
-                  {showImage && (
-                    <div className="flex flex-end">
-                      <Image
-                        src={subcategory.image}
-                        className="mx-1 my-1"
-                        alt="Logo Aldo"
-                        width={70}
-                        height={60}
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
+              <MenuRow product={subcategory} />
             </div>
           ))}
         </div>
