@@ -35,7 +35,7 @@ export default function CartSummary({ cartItems, setCart }: props) {
     }, "");
     const message = `${Label.MESSAGE_DELIVERY}, + Nombre: ${firstName}, Direccion: ${address}, + ${cartShop}`;
     window.open(
-      `https://api.whatsapp.com/send?phone=5491133400000&text=${message}`
+      `https://api.whatsapp.com/send?phone=5491165550438&text=${message}`
     );
   };
 
