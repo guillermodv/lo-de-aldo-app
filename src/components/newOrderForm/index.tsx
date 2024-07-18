@@ -43,7 +43,7 @@ export default function NewOrderForm() {
             {Label.COMPLETE_FORM_LABEL.toUpperCase()}
           </div>
           <div className="font-mono md:text-xl text-sm">{`Hola! ${firstName}`}</div>
-          <div className="font-mono md:text-xl text-sm">
+          <div className="font-mono md:text-xl text-sm p-2">
             {`Pedido a entregar en: ${address}`}
           </div>
           {categories?.map((category, key) => (
@@ -53,19 +53,14 @@ export default function NewOrderForm() {
                   {category.name.toUpperCase()}
                 </div>
               </div>
-              <div className="grid sm:grid-cols-3 grid-cols-2 p-1">
+              <div className="grid sm:grid-cols-4 grid-cols-2">
                 {category.subcategories?.map((subcategory, key) => (
                   <div
                     key={key}
-                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-2"
+                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1"
                   >
                     <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                      <img
-                        className="w-full"
-                        src="muzza.jpeg"
-                        alt="Product Image"
-                      />
-                      <div className="px-6 py-4">
+                      <div className="px-4 py-4">
                         <div className="font-bold text-sm md:text-xl mb-2">
                           {subcategory.name}
                         </div>
@@ -90,7 +85,7 @@ export default function NewOrderForm() {
               </div>
             </div>
           ))}
-          <CartFooter productCount={cart.length} />
+          <CartFooter productCount={cart.length} params={searchParams} />
           <BackLabel />
         </div>
       </div>

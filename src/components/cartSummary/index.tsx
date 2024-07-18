@@ -1,6 +1,7 @@
 "use client";
 import { Label } from "@/constants/label";
 import { CartItem } from "@/data/shopData";
+import { useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import GoBackButton from "../goBackButton";
 import WhatsappLogo from "../whatsappLogo";
@@ -11,6 +12,10 @@ interface props {
 }
 
 export default function CartSummary({ cartItems, setCart }: props) {
+  const searchParams = useSearchParams();
+  const firstName = searchParams.get("firstName");
+  const address = searchParams.get("address");
+
   const onDelete = (id: string) => {
     const newCart = cartItems.filter((item) => item.id !== id);
     setCart(newCart);
@@ -28,7 +33,7 @@ export default function CartSummary({ cartItems, setCart }: props) {
     const cartShop = cartItems.reduce((message, item) => {
       return message + `${item.product.name}: ${item.quantity}, `;
     }, "");
-    const message = `${Label.MESSAGE_DELIVERY} + ${cartShop}`;
+    const message = `${Label.MESSAGE_DELIVERY}, + Nombre: ${firstName}, Direccion: ${address}, + ${cartShop}`;
     window.open(
       `https://api.whatsapp.com/send?phone=5491133400000&text=${message}`
     );
