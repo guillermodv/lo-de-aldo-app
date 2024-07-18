@@ -2,12 +2,12 @@ import { Label } from "@/constants/label";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useContext } from "react";
-import { useForm } from "react-hook-form";
 
 import { CartContext } from "@/context";
-import { Product, shop } from "../../data/shopData";
+import { CartItem, Product, shop } from "../../data/shopData";
 import BackLabel from "../backLabel";
 import CartFooter from "../cartFooter";
+import GoBackButton from "../goBackButton";
 
 export default function NewOrderForm() {
   const searchParams = useSearchParams();
@@ -15,16 +15,15 @@ export default function NewOrderForm() {
   const address = searchParams.get("address");
   const categories = shop.categories;
   let { cart, setCart } = useContext(CartContext);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({});
 
-  const onAdd = (product: Product) => {
+  const onAdd = (product: Product, quantity: number) => {
     const oldCart = cart;
-    const newCart = [...oldCart, product];
-    console.log("carrito", newCart);
+    let productCart: CartItem = {
+      id: Math.random().toString(36).substring(2, 9),
+      product: product,
+      quantity: quantity,
+    };
+    const newCart = [...oldCart, productCart];
     setCart(newCart);
   };
 
@@ -39,6 +38,7 @@ export default function NewOrderForm() {
             width={120}
             height={380}
           />
+          <GoBackButton />
           <div className="font-bold mx-4 mt-4 mb-2 text-green-800">
             {Label.COMPLETE_FORM_LABEL.toUpperCase()}
           </div>
@@ -53,7 +53,7 @@ export default function NewOrderForm() {
                   {category.name.toUpperCase()}
                 </div>
               </div>
-              <div className="grid sm:grid-cols-3 grid-cols-2 p-4">
+              <div className="grid sm:grid-cols-3 grid-cols-2 p-1">
                 {category.subcategories?.map((subcategory, key) => (
                   <div
                     key={key}
@@ -66,18 +66,18 @@ export default function NewOrderForm() {
                         alt="Product Image"
                       />
                       <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">
+                        <div className="font-bold text-sm md:text-xl mb-2">
                           {subcategory.name}
                         </div>
-                        <p className="text-gray-700 text-base">
+                        <p className="text-gray-700  text-sm md:text-xl">
                           {subcategory.description}
                         </p>
                         <div className="flex justify-between items-center mt-4">
-                          <div className="text-xl font-bold">
+                          <div className="md:text-xl text-sm font-bold">
                             ${subcategory.price}
                           </div>
                           <button
-                            onClick={() => onAdd(subcategory)}
+                            onClick={() => onAdd(subcategory, 1)}
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                           >
                             +

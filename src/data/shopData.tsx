@@ -23,6 +23,12 @@ type Product = {
   quantity: string;
 };
 
+type CartItem = {
+  id: string;
+  product: Product;
+  quantity: number;
+};
+
 /**
  * An array of `Category` objects representing the categories and subcategories of products available in the application.
  */
@@ -386,4 +392,4 @@ const shop = {
 };
 
 export { shop };
-export type { Category, Product, Shop };
+export type { CartItem, Category, Product, Shop };
