@@ -10,10 +10,10 @@ import CartFooter from "../cartFooter";
 import GoBackButton from "../goBackButton";
 
 const selectedStyle =
-  "bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded";
+  "bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-110";
 
 const nonSelectedStyle =
-  "bg-blue-500 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded";
+  "bg-blue-500 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-110";
 
 export default function NewOrderForm() {
   const searchParams = useSearchParams();
