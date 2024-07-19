@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/constants/label";
 import { cleanObject, openInNewTab } from "@/util";
 import Image from "next/image";

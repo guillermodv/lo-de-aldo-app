@@ -1,7 +1,8 @@
+"use client";
 import { Label } from "@/constants/label";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useContext } from "react";
+import { Suspense, useCallback, useContext } from "react";
 
 import { BackLabel, CartFooter, GoBackButton } from "@/components";
 import { CartContext } from "@/context";
@@ -44,72 +45,74 @@ export default function NewOrderForm() {
   const { notifyAdded } = useToast();
 
   return (
-    <div>
-      <div className="flex flex-col place-items-center w-full bg-gray-200 text-black">
-        <Image
-          src="/logo.jpeg"
-          className="mx-4 my-2"
-          alt="Logo Aldo"
-          width={120}
-          height={380}
-        />
-        <Toaster />
-        <GoBackButton />
-        <div className="font-bold mx-4 mt-4 mb-2 text-green-800">
-          {Label.COMPLETE_FORM_LABEL.toUpperCase()}
-        </div>
-        <div className="font-mono md:text-xl text-sm">{`Hola! ${firstName}`}</div>
-        <div className="font-mono md:text-xl text-sm p-2">
-          {`Pedido a entregar en: ${address}`}
-        </div>
-        {categories?.map((category, key) => (
-          <div className="md:w-4/5 w-full px-2" key={key}>
-            <div className="flex flex-col">
-              <div className="font-bold md:text-xl text-orange-500 text-sm pt-2">
-                {category.name.toUpperCase()}
+    <Suspense>
+      <div>
+        <div className="flex flex-col place-items-center w-full bg-gray-200 text-black">
+          <Image
+            src="/logo.jpeg"
+            className="mx-4 my-2"
+            alt="Logo Aldo"
+            width={120}
+            height={380}
+          />
+          <Toaster />
+          <GoBackButton />
+          <div className="font-bold mx-4 mt-4 mb-2 text-green-800">
+            {Label.COMPLETE_FORM_LABEL.toUpperCase()}
+          </div>
+          <div className="font-mono md:text-xl text-sm">{`Hola! ${firstName}`}</div>
+          <div className="font-mono md:text-xl text-sm p-2">
+            {`Pedido a entregar en: ${address}`}
+          </div>
+          {categories?.map((category, key) => (
+            <div className="md:w-4/5 w-full px-2" key={key}>
+              <div className="flex flex-col">
+                <div className="font-bold md:text-xl text-orange-500 text-sm pt-2">
+                  {category.name.toUpperCase()}
+                </div>
               </div>
-            </div>
-            <div className="grid sm:grid-cols-4 grid-cols-2">
-              {category.subcategories?.map((subcategory, key) => (
-                <div
-                  key={key}
-                  className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1 justify-between"
-                >
-                  <div className="max-w-sm rounded overflow-hidden shadow-lg h-full">
-                    <div className="px-4 py-4 flex flex-col justify-between">
-                      <div className="font-bold text-sm md:text-xl mb-2">
-                        {subcategory.name}
-                      </div>
-                      <p className="text-gray-700  text-sm md:text-xl">
-                        {subcategory.description}
-                      </p>
-                      <div className="flex justify-between items-center mt-4">
-                        <div className="md:text-xl text-sm font-bold">
-                          ${subcategory.price}
+              <div className="grid sm:grid-cols-4 grid-cols-2">
+                {category.subcategories?.map((subcategory, key) => (
+                  <div
+                    key={key}
+                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1 justify-between"
+                  >
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg h-full">
+                      <div className="px-4 py-4 flex flex-col justify-between">
+                        <div className="font-bold text-sm md:text-xl mb-2">
+                          {subcategory.name}
                         </div>
-                        <button
-                          onClick={() => {
-                            notifyAdded(), onAdd(subcategory, 1);
-                          }}
-                          className={
-                            isSelected(subcategory.name)
-                              ? selectedStyle
-                              : nonSelectedStyle
-                          }
-                        >
-                          +
-                        </button>
+                        <p className="text-gray-700  text-sm md:text-xl">
+                          {subcategory.description}
+                        </p>
+                        <div className="flex justify-between items-center mt-4">
+                          <div className="md:text-xl text-sm font-bold">
+                            ${subcategory.price}
+                          </div>
+                          <button
+                            onClick={() => {
+                              notifyAdded(), onAdd(subcategory, 1);
+                            }}
+                            className={
+                              isSelected(subcategory.name)
+                                ? selectedStyle
+                                : nonSelectedStyle
+                            }
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-        <CartFooter productCount={cart.length} params={searchParams} />
-        <BackLabel />
+          ))}
+          <CartFooter productCount={cart.length} params={searchParams} />
+          <BackLabel />
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
