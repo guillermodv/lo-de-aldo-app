@@ -70,10 +70,10 @@ export default function NewOrderForm() {
                 {category.subcategories?.map((subcategory, key) => (
                   <div
                     key={key}
-                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1"
+                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1 justify-between"
                   >
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                      <div className="px-4 py-4">
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg h-full">
+                      <div className="px-4 py-4 flex flex-col justify-between">
                         <div className="font-bold text-sm md:text-xl mb-2">
                           {subcategory.name}
                         </div>
