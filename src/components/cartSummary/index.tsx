@@ -1,6 +1,7 @@
 "use client";
 import { Label } from "@/constants/label";
 import { CartItem } from "@/data/shopData";
+import useToast from "@/hooks/useToast";
 import { useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import GoBackButton from "../goBackButton";
@@ -15,6 +16,7 @@ export default function CartSummary({ cartItems, setCart }: props) {
   const searchParams = useSearchParams();
   const firstName = searchParams.get("firstName");
   const address = searchParams.get("address");
+  const { notifyDeleted } = useToast();
 
   const onDelete = (id: string) => {
     const newCart = cartItems.filter((item) => item.id !== id);
@@ -81,7 +83,9 @@ export default function CartSummary({ cartItems, setCart }: props) {
           </div>
           <button
             className="mt-4 align-middle select-none font-sans font-bold uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg  bg-green-800 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none items-center gap-3"
-            onClick={() => sendMessage()}
+            onClick={() => {
+              notifyDeleted(), sendMessage();
+            }}
           >
             <div className="m-1 flex items-center font-extrabold hover:font-bold">
               <WhatsappLogo /> {Label.DELIVERY_lABEL}

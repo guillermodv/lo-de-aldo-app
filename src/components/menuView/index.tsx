@@ -1,7 +1,6 @@
+import { BackLabel, MenuRow } from "@/components";
 import { shop } from "@/data/shopData";
 import Image from "next/image";
-import BackLabel from "../backLabel";
-import MenuRow from "../MenuRow";
 
 interface MenuForm {
   showDescriptions: boolean;
