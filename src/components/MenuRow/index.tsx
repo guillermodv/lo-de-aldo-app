@@ -15,7 +15,7 @@ const MenuRow = ({ product }: Props) => {
       <div className="flex-grow ml-4">
         <h3 className="text-lg font-semibold">{product.name}</h3>
         <p className="text-sm text-gray-600">{product.description}</p>
-        <p className="text-sm text-gray-600">${product.price} c/u</p>
+        <p className="text-sm text-gray-600 font-bold">${product.price} c/u</p>
       </div>
     </div>
   );

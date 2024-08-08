@@ -71,37 +71,42 @@ export default function NewOrderForm() {
                   {category.name.toUpperCase()}
                 </div>
               </div>
-              <div className="grid sm:grid-cols-4 grid-cols-2">
+              <div className="grid sm:grid-cols-4 grid-cols-2 gap-4">
                 {category.subcategories?.map((subcategory, key) => (
                   <div
                     key={key}
-                    className=" border-gray-400 border-2 mb-1 rounded-md bg-slate-200 m-1 justify-between"
+                    className="border-gray-400 border-2 mb-1 rounded-md bg-slate-200 p-2 flex flex-col justify-between"
                   >
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg h-full">
-                      <div className="px-4 py-4 flex flex-col justify-between">
-                        <div className="font-bold text-sm md:text-xl mb-2">
-                          {subcategory.name}
+                    <Image
+                      src={subcategory.image} // Asegúrate de que `subcategory.image` es una URL válida
+                      alt={subcategory.name}
+                      width={200} // Ajusta el tamaño según tus necesidades
+                      height={200} // Ajusta el tamaño según tus necesidades
+                      className="w-full h-48 object-cover rounded-t-md"
+                    />
+                    <div className="px-4 py-2 flex flex-col justify-between flex-grow">
+                      <div className="font-bold text-sm md:text-xl mb-2">
+                        {subcategory.name}
+                      </div>
+                      <p className="text-gray-700 text-sm md:text-xl">
+                        {subcategory.description}
+                      </p>
+                      <div className="flex justify-between items-center mt-4">
+                        <div className="md:text-xl text-sm font-bold">
+                          ${subcategory.price}
                         </div>
-                        <p className="text-gray-700  text-sm md:text-xl">
-                          {subcategory.description}
-                        </p>
-                        <div className="flex justify-between items-center mt-4">
-                          <div className="md:text-xl text-sm font-bold">
-                            ${subcategory.price}
-                          </div>
-                          <button
-                            onClick={() => {
-                              notifyAdded(), onAdd(subcategory, 1);
-                            }}
-                            className={
-                              isSelected(subcategory.name)
-                                ? selectedStyle
-                                : nonSelectedStyle
-                            }
-                          >
-                            +
-                          </button>
-                        </div>
+                        <button
+                          onClick={() => {
+                            notifyAdded(), onAdd(subcategory, 1);
+                          }}
+                          className={
+                            isSelected(subcategory.name)
+                              ? selectedStyle
+                              : nonSelectedStyle
+                          }
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -109,7 +114,11 @@ export default function NewOrderForm() {
               </div>
             </div>
           ))}
-          <CartFooter productCount={cart.length} params={searchParams} />
+          <CartFooter
+            productCount={cart.length}
+            params={searchParams}
+            products={cart}
+          />
           <BackLabel />
         </div>
       </div>
